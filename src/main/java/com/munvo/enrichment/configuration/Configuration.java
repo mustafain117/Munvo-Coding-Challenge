@@ -8,12 +8,24 @@ public class Configuration {
     private String studentName;
     private String type;
     private String fileName;
-
-    public Configuration() {
+    
+    //private instance which is accessed by getInstance() method
+    private static Configuration configInstance;	
+    	
+    //private constructor
+    private Configuration() {
         Config config = ConfigFactory.load();
         this.studentName = config.getString("name");
-        this.studentName = config.getString("type");
-        this.studentName = config.getString("fileName");
+        this.type = config.getString("type");
+        this.fileName = config.getString("fileName");
+    }
+    
+    public static Configuration getInstance() {
+    		if(configInstance == null) {
+    		    //lazy initialization
+    			configInstance = new Configuration();
+    		}
+    		return configInstance;
     }
 
     public String getStudentName() {
