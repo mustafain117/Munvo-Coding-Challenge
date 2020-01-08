@@ -3,7 +3,7 @@ package com.munvo.enrichment.parser;
 import com.munvo.enrichment.configuration.Configuration;
 
 /**
- * This class is applies factory pattern to instantiate a FileReaderParser
+ * This class applies factory pattern to instantiate a FileReaderParser
  * @author mustafainali
  * 
  */
